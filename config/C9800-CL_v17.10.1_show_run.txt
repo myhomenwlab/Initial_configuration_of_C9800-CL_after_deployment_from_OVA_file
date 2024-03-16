@@ -1,0 +1,423 @@
+wlc01#
+wlc01#terminal length 0
+wlc01#
+wlc01#
+wlc01#show version
+Cisco IOS XE Software, Version 17.10.01
+Cisco IOS Software [Dublin], C9800-CL Software (C9800-CL-K9_IOSXE), Version 17.10.1, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2022 by Cisco Systems, Inc.
+Compiled Tue 29-Nov-22 16:23 by mcpre
+
+
+Cisco IOS-XE software, Copyright (c) 2005-2022 by cisco Systems, Inc.
+All rights reserved.  Certain components of Cisco IOS-XE software are
+licensed under the GNU General Public License ("GPL") Version 2.0.  The
+software code licensed under GPL Version 2.0 is free software that comes
+with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+GPL code under the terms of GPL Version 2.0.  For more details, see the
+documentation or "License Notice" file accompanying the IOS-XE software,
+or the applicable URL provided on the flyer accompanying the IOS-XE
+software.
+
+
+ROM: IOS-XE ROMMON
+
+wlc01 uptime is 2 minutes
+Uptime for this control processor is 4 minutes
+System returned to ROM by reload
+System image file is "bootflash:packages.conf"
+Last reload reason: Unknown reason
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+AIR License Level: AIR DNA Advantage
+Next reload AIR license Level: AIR DNA Advantage
+
+Smart Licensing Status: Smart Licensing Using Policy
+
+cisco C9800-CL (VXE) processor (revision VXE) with 12264203K/3075K bytes of memory.
+Processor board ID 94TSWI79AYW
+Router operating mode: Autonomous
+1 Virtual Ethernet interface
+3 Gigabit Ethernet interfaces
+32768K bytes of non-volatile configuration memory.
+16329084K bytes of physical memory.
+11526144K bytes of virtual hard disk at bootflash:.
+Installation mode is INSTALL
+
+
+Configuration register is 0x2102
+
+wlc01#
+wlc01#
+wlc01#show running-config
+Building configuration...
+
+Current configuration : 10288 bytes
+!
+! Last configuration change at 13:24:01 UTC Sat Mar 16 2024
+!
+version 17.10
+service timestamps debug datetime msec
+service timestamps log datetime msec
+! Call-home is enabled by Smart-Licensing.
+service call-home
+platform qfp utilization monitor load 80
+platform punt-keepalive disable-kernel-core
+platform console virtual
+!
+hostname wlc01
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+vtp mode off
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-993707308
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-993707308
+ revocation-check none
+ rsakeypair TP-self-signed-993707308
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+!
+!
+crypto pki certificate chain TP-self-signed-993707308
+ certificate self-signed 01
+  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 39393337 30373330 38301E17 0D323430 33313631 33323335 
+  335A170D 33343033 31363133 32333533 5A303031 2E302C06 03550403 1325494F 
+  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3939 33373037 
+  33303830 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02 
+  82010100 B89556D7 744BB72A D10CFC9E B1563A48 457C6CD1 F6E8A913 0E5D1FF0 
+  803397B2 2D38195A 81080125 688CFC3F 283AF520 062145DB 39B924AB 61959109 
+  C19F41A4 92A06AC1 EDD518FA 684F886E 368CD0F1 6629CB8E FEF8FEA5 0D18780C 
+  06D89FEF 78C108F1 36E824F5 FAE16B59 60EF5D91 E60401F0 A92C12EC 1A115284 
+  1FFA23CB EBED6595 8862E8FC A75CAA91 2B9C6171 FAE695B7 80A0BDDF 4638279A 
+  12432A73 91DE15A5 3FEA165F C1F96333 00BE7CC0 0C2F0981 D1F3F372 F992E802 
+  128DCD3B 461B2745 CDEFF28F AA078D8E FA4AC95A 49DC3AAF F6ECFC3B 9C739925 
+  625E1062 0A48474B A3A330D6 ABE96439 DAE6DAFD B4DCC2EF 2D5D34DE FFF72A54 
+  E0E6FEFF 02030100 01A35330 51300F06 03551D13 0101FF04 05300301 01FF301F 
+  0603551D 23041830 16801492 35E40B89 D42D1C81 2C80443B A8951E00 1773E430 
+  1D060355 1D0E0416 04149235 E40B89D4 2D1C812C 80443BA8 951E0017 73E4300D 
+  06092A86 4886F70D 01010505 00038201 01004F32 B7439667 FB4D67E7 0422B9C9 
+  AE6C5505 91B43C90 35D85150 5EFB6E64 7116C213 9150271F 062DB1C7 9D5BFE8E 
+  267002BD A1A605FB 74629940 BCEA6099 03A19C7C 9C01E75A CE43E6F7 BB61A5C6 
+  BB51352D 4E5A3A4C 969874CC 53E13A73 7CBCC154 0E54EAF5 A8EBE76D 1B2E7090 
+  10A9BEA7 FE688B5A 4B737C54 CFAC4B64 A2560E1A A83056F9 778EB37A 43C73187 
+  09A29F50 824C8A19 B35C04AD 90C03862 7BFFFC9D BBCD0E91 BC139CDF 9DF44DCB 
+  8168015D F20578E8 D70847AE C5BC7C66 F74D79F3 57234EFA A90367AB 3F4FFA78 
+  5DD3F206 67A407B5 D7483A5D 449C250D C3379EE1 7C5B263D 58E62757 0449A6EE 
+  C6F17782 02A10DD6 D9793F23 B39F11AE ACB9
+  	quit
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D 
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE 
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC 
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B 
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C 
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B 
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB 
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 
+  D697DF7F 28
+  	quit
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid C9800-CL-K9 sn 94TSWI79AYW
+diagnostic bootup level minimal
+memory free low-watermark processor 65395
+!
+!
+enable secret 9 $9$sr9bC3yGAnRrdE$7nY6oQ2LakS.ekieRzxirkfgmog5NrAq7Zq/LdlFZNY
+!
+username admin privilege 15 secret 9 $9$ci8aSDy3TAVuIk$JzuH.MjFoq1RQ.SzGWkfUrAnTbBrVgvfikFTTmDTyzU
+!
+redundancy
+ mode sso
+!
+!
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+!
+class-map match-any AVC-Reanchor-Class
+ match protocol cisco-jabber-audio
+ match protocol cisco-jabber-video
+ match protocol webex-media
+ match protocol webex-app-sharing
+ match protocol webex-control
+ match protocol webex-meeting
+ match protocol wifi-calling
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface GigabitEthernet1
+ no switchport
+ ip address 192.0.2.101 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet2
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet3
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface Vlan1
+ no ip address
+ no ip proxy-arp
+ shutdown
+ no mop enabled
+ no mop sysid
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+!
+ip route 0.0.0.0 0.0.0.0 GigabitEthernet1 192.0.2.254
+ip ssh bulk-mode 131072
+ip ssh rsa keypair-name ssh-key
+ip scp server enable
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login
+ transport input ssh
+!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+!
+!
+!
+!
+!
+!
+wireless aaa policy default-aaa-policy
+wireless cts-sxp profile default-sxp-profile
+wireless profile airtime-fairness default-atf-policy 0
+wireless profile flex default-flex-profile
+ description "default flex profile"
+wireless profile mesh default-mesh-profile
+ description "default mesh profile"
+wireless profile multi-bssid default-multi-bssid-profile
+ description "Default multi bssid profile"
+wireless profile radio default-radio-profile
+ description "Preconfigured default radio profile"
+wireless profile policy default-policy-profile
+ description "default policy profile"
+wireless tag site default-site-tag
+ description "default site tag"
+wireless tag policy default-policy-tag
+ description "default policy-tag"
+wireless tag rf default-rf-tag
+ description "default RF tag"
+ dot11 24ghz slot0 radio-profile default-radio-profile
+ dot11 5ghz slot1 radio-profile default-radio-profile
+ dot11 5ghz slot2 radio-profile default-radio-profile
+ dot11 6ghz slot2 radio-profile default-radio-profile
+ dot11 6ghz slot3 radio-profile default-radio-profile
+wireless fabric control-plane default-control-plane
+ap dot11 24ghz rf-profile Low_Client_Density_rf_24gh
+ coverage data rssi threshold -90
+ coverage level 2
+ coverage voice rssi threshold -90
+ description "pre configured Low Client Density rfprofile for 2.4gh radio"
+ high-density rx-sop threshold low
+ rate RATE_12M supported
+ rate RATE_24M supported
+ rate RATE_6M supported
+ tx-power v1 threshold -65
+ no shutdown
+ap dot11 24ghz rf-profile High_Client_Density_rf_24gh
+ description "pre configured High Client Density rfprofile for 2.4gh radio"
+ high-density rx-sop threshold medium
+ rate RATE_11M disable
+ rate RATE_12M mandatory
+ rate RATE_1M disable
+ rate RATE_24M supported
+ rate RATE_2M disable
+ rate RATE_5_5M disable
+ rate RATE_6M disable
+ tx-power min 7
+ no shutdown
+ap dot11 24ghz rf-profile Typical_Client_Density_rf_24gh
+ description "pre configured Typical Client Density rfprofile for 2.4gh radio"
+ rate RATE_11M disable
+ rate RATE_12M mandatory
+ rate RATE_1M disable
+ rate RATE_24M supported
+ rate RATE_2M disable
+ rate RATE_5_5M disable
+ rate RATE_6M disable
+ no shutdown
+ap dot11 24ghz rate RATE_12M supported
+ap dot11 24ghz rate RATE_24M supported
+ap dot11 24ghz rate RATE_6M supported
+ap dot11 6ghz rf-profile default-rf-profile-6ghz
+ description "default rfprofile for 6GHz radio"
+ rate RATE_12M mandatory
+ rate RATE_24M mandatory
+ rate RATE_6M mandatory
+ no shutdown
+ap dot11 5ghz rf-profile Low_Client_Density_rf_5gh
+ coverage data rssi threshold -90
+ coverage level 2
+ coverage voice rssi threshold -90
+ description "pre configured Low Client Density rfprofile for 5gh radio"
+ high-density rx-sop threshold low
+ rate RATE_12M mandatory
+ rate RATE_24M mandatory
+ rate RATE_6M mandatory
+ tx-power v1 threshold -60
+ no shutdown
+ap dot11 5ghz rf-profile High_Client_Density_rf_5gh
+ description "pre configured High Client Density rfprofile for 5gh radio"
+ high-density rx-sop threshold medium
+ rate RATE_12M mandatory
+ rate RATE_24M mandatory
+ rate RATE_6M disable
+ rate RATE_9M disable
+ tx-power min 7
+ tx-power v1 threshold -65
+ no shutdown
+ap dot11 5ghz rf-profile Typical_Client_Density_rf_5gh
+ description "pre configured Typical Density rfprofile for 5gh radio"
+ rate RATE_12M mandatory
+ rate RATE_24M mandatory
+ rate RATE_6M mandatory
+ no shutdown
+ap dot11 5ghz rate RATE_12M mandatory
+ap dot11 5ghz rate RATE_24M mandatory
+ap dot11 5ghz rate RATE_6M mandatory
+ap dot11 6ghz rrm monitor measurement 600
+ap tag-source-priority 2 source filter
+ap tag-source-priority 3 source ap
+ap profile default-ap-profile
+ description "default ap profile"
+trapflags ap crash
+trapflags ap noradiocards
+trapflags ap register
+netconf-yang
+end
+
+wlc01#
