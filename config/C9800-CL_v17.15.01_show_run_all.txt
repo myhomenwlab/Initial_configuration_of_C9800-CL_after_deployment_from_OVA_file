@@ -23,11 +23,11 @@ software.
 
 ROM: IOS-XE ROMMON
 
-wlc01 uptime is 5 minutes
-Uptime for this control processor is 7 minutes
+wlc01 uptime is 3 minutes
+Uptime for this control processor is 5 minutes
 System returned to ROM by reload
 System image file is "bootflash:packages.conf"
-Last reload reason: reload
+Last reload reason: Unknown reason
 
 
 
@@ -52,7 +52,7 @@ Next reload AIR license Level: AIR DNA Advantage
 Smart Licensing Status: Smart Licensing Using Policy
 
 cisco C9800-CL (VXE) processor (revision VXE) with 12260810K/3075K bytes of memory.
-Processor board ID 92F33PWQYAR
+Processor board ID 94TSWI79AYW
 Router operating mode: Autonomous
 1 Virtual Ethernet interface
 3 Gigabit Ethernet interfaces
@@ -72,7 +72,7 @@ Building configuration...
 
 Current configuration with default configurations exposed : 102795 bytes
 !
-! Last configuration change at 04:24:41 UTC Thu Aug 15 2024
+! Last configuration change at 08:12:03 UTC Mon Apr 28 2025
 !
 no issu config-sync policy lbl prc
 no issu config-sync policy bulk prc
@@ -459,7 +459,7 @@ no ip dhcp-server query lease check-source
 ip dhcp-client default-router distance 254
 ip cef optimize neighbor resolution
 no ip cef accounting 
-ip cef load-sharing algorithm universal 28DD11E5
+ip cef load-sharing algorithm universal E7435C33
 ip dhcp relay information policy replace
 ip dhcp relay information check
 ip dhcp use class
@@ -540,7 +540,7 @@ no ipv6 dhcp server vrf enable
 ipv6 spd queue max-threshold 74
 ipv6 spd queue min-threshold 73
 ipv6 cef optimize neighbor resolution
-ipv6 cef load-sharing algorithm universal 28DD11E5
+ipv6 cef load-sharing algorithm universal E7435C33
 kerberos timeout 15
 kerberos retry 4
 kerberos processes 1
@@ -669,21 +669,12 @@ dsapp line call-control mode standard
 !
 pae
 fqdn ttl-timeout-factor 10
-scripting tcl low-memory 3087624303
+scripting tcl low-memory 3087614275
 no virtual-template snmp
 per-call export primary bootflash: secondary bootflash:
 per-call shutdown
 crypto pki token default removal timeout 0
 crypto pki token default max-retries 15
-!
-crypto pki trustpoint TP-self-signed-708376182
- enrollment retry count 999
- enrollment retry period 1
- enrollment selfsigned
- subject-name cn=IOS-Self-Signed-Certificate-708376182
- revocation-check none
- rsakeypair TP-self-signed-708376182
- hash sha512
 !
 crypto pki trustpoint SLA-TrustPoint
  enrollment retry count 999
@@ -692,36 +683,16 @@ crypto pki trustpoint SLA-TrustPoint
  revocation-check crl
  hash sha512
 !
+crypto pki trustpoint TP-self-signed-993707308
+ enrollment retry count 999
+ enrollment retry period 1
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-993707308
+ revocation-check none
+ rsakeypair TP-self-signed-993707308
+ hash sha512
 !
-crypto pki certificate chain TP-self-signed-708376182
- certificate self-signed 01
-  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030 
-  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274 
-  69666963 6174652D 37303833 37363138 32301E17 0D323430 38313530 34323433 
-  315A170D 33343038 31353034 32343331 5A303031 2E302C06 03550403 0C25494F 
-  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3730 38333736 
-  31383230 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02 
-  82010100 B5222687 4988CB7D 8968A25A DE5673EE 96D82E13 2CEE6022 3E8C7C19 
-  CCC3AAAC D042304F 28EA5040 FA27FD56 A45831A3 966AF866 E60BB4C4 C5D113A6 
-  E38775AE C680D97F AFA0A331 D9807DD1 76941684 AFCFA24E D9A5B767 7CA7C377 
-  1AA6C435 844DC66F F33E69EB B21FC21E A9A6A1A1 44C0D4C3 FB1A65F6 2C4E70A7 
-  0D3E6A8B 2044B574 4CBBC4B8 DF07871A 4EE7E559 6490C14E BF75115C FDF3844C 
-  5AF77916 221E5D43 D1B5F151 10F69AD7 C5EC20C2 270424AE 59313925 A6DBEA45 
-  762E31AC 8CA363A2 EFDDE3A7 C0F0E943 100B12EB 588E7008 3BD95271 DE17C869 
-  555F6EC5 6A22BC11 323C995D A152F052 2D4BA5C8 422F0BE3 33EE559F A0F960D4 
-  06950497 02030100 01A35330 51301D06 03551D0E 04160414 5346494D 6638E429 
-  AE1A52B1 46166048 013C0B5B 301F0603 551D2304 18301680 14534649 4D6638E4 
-  29AE1A52 B1461660 48013C0B 5B300F06 03551D13 0101FF04 05300301 01FF300D 
-  06092A86 4886F70D 01010D05 00038201 01005E29 F3C51C80 9AFD75CB 76ABF420 
-  00532A0E 1F593672 723C0F76 70CF9B8F CCACB85F 082F73CA 6588CC54 F0481A9F 
-  C2648F03 6DC736DC 8F99D396 B63202A9 0554E103 3EBFEB45 FA260BFF 870CF87F 
-  6A028179 B97049CA DAF8A0FE 9A42CA28 2EB3DCB3 EE011DE9 EFD28C87 B2F8560E 
-  1BAD1A97 D39985DD 4D1BA237 0A0C265A 4E8F8EE9 4CB70806 7629DA1C 5D4E5B69 
-  7FA2AFFE A86D338B 8A29D1C3 EC0A308C 349271D0 638D69C4 1B86CBBA 64A0FE5A 
-  41EA19B8 0DC015FF D94C9C64 2B0E0E2B DE856D5A F8BE2C2A 8A05DDB7 28EBE8E2 
-  665557AD A7BD586C 70CD9A71 5A7DAACF 84376A5D 9BCFC76A 55DED5BC A29D4D8A 
-  B8637561 BEC01651 305559A8 F687C1B2 7A78
-  	quit
+!
 crypto pki certificate chain SLA-TrustPoint
  certificate ca 01
   30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 
@@ -750,6 +721,35 @@ crypto pki certificate chain SLA-TrustPoint
   80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB 
   418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 
   D697DF7F 28
+  	quit
+crypto pki certificate chain TP-self-signed-993707308
+ certificate self-signed 01
+  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030 
+  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 39393337 30373330 38301E17 0D323530 34323830 38313135 
+  375A170D 33353034 32383038 31313537 5A303031 2E302C06 03550403 0C25494F 
+  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3939 33373037 
+  33303830 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02 
+  82010100 A6FAE59E 4CA55A74 BA92B9D4 179D35DF 517AD986 D0D10AF4 4B1E3475 
+  C613F9E1 3A836492 BD154684 8BF92B8B 4CFA9376 F3D53962 A07D5FA7 4AA9A4C8 
+  3A3A8E80 B680D38E EF12E50E BC43372C 6EDB6964 439D515E 88E0DD06 A2CA0CBB 
+  80B6D878 5A2DB3D7 B76D24C5 16BA2E60 C10AAF50 9A49C631 4ABD0041 B6373B0E 
+  BC922DEC E03D914C 914B1B08 310B6545 6899F7CF 4AB3F962 9C4DCAC1 48BED153 
+  085DD40F 2A31B709 D9E78C60 0F98F92E 2140D583 8F845A09 47E88B38 2D9E3100 
+  03E991F3 01DA9844 413C33ED 8F37A1C3 B9D83296 BA32FB08 9CA8E8A5 B2783AF2 
+  7991D5FC E2B50342 0FF23038 10917350 35A5E041 02C0665C DF981AF6 A24320FF 
+  60606471 02030100 01A35330 51301D06 03551D0E 04160414 0918FAB7 7F067F9E 
+  3938F50A EC88D4BE 3E4D25A4 301F0603 551D2304 18301680 140918FA B77F067F 
+  9E3938F5 0AEC88D4 BE3E4D25 A4300F06 03551D13 0101FF04 05300301 01FF300D 
+  06092A86 4886F70D 01010D05 00038201 010063AA 364CBE10 CD8E6CFD 0C2A8162 
+  6C416D01 1608B580 51BE0B35 3C0C0976 67F066DF 505D75C3 137A5FE3 AAD64820 
+  9B9F7793 DECD75D6 34E48C90 9A1981FA FBD74809 8C31110E DD0F605D 3EA1BBA1 
+  5FDAD289 48B21E1A FF0F7698 27667358 57410A8D 37D7E689 7993E124 BBAD30DF 
+  C279641F D9ABD0E8 67405DE2 559BD3C0 CB489703 7B1BEAE8 2DFB9151 E6AC56B9 
+  0981D5CD BC95A95F AD3EBCA5 B0325776 384B66F0 7BA2665E D18675E4 8FA74E38 
+  2A309610 FC9AC0CB 1AE29AA3 35BF6579 FAF9B475 9DD20543 68A9B277 543A4C1F 
+  471605A6 B2BA4D02 297945BB 25E61241 DAB130A8 DEE68F4F E1993134 7AA9D4C6 
+  B2837E1B 5F833948 87087A47 46DB891C BFD7
   	quit
 !
 crypto pki crl download schedule prepublish 0
@@ -839,7 +839,7 @@ mrcp client session history records 50
 mrcp client session nooffailures 5
 mrcp client accept-charset-compliance
 mrcp client codec g711alaw
-license udi pid C9800-CL-K9 sn 92F33PWQYAR
+license udi pid C9800-CL-K9 sn 94TSWI79AYW
 license smart transport cslu
 license smart server-identity-check
 port-channel load-balance src-dst-ip
@@ -888,9 +888,9 @@ errdisable detect cause all
 svl l2bum optimization
 lacp system-priority 32768
 !
-enable secret 9 $9$afYfynFtJ3zM6U$vauutwif0IZDLy3YT5C741/2mBs9d/oPT4IGomayK.Y
+enable secret 9 $9$XO0D2DqhyvLY3.$dty6bjMQSaqK5Q5S8vB.wauRKXWFy.laa2xn1FSRXTk
 !
-username admin privilege 15 secret 9 $9$gV92ATL3e9ySU.$EwHRA1KWvZncf6Z8uz051iDgaRpUdGwoMhO1V3P8NzU
+username admin privilege 15 secret 9 $9$D1J9lb5d6LAsGU$DSdFSn9jpFThkyTT7PL3UhK2dSPPgmc.UcMf114Wx4s
 !
 redundancy
  mode sso
@@ -1437,7 +1437,7 @@ mop device-code cisco
 mop retransmit-timer 4
 mop retries 8
 no route-tag notation dotted-decimal
-snmp-server engineID local 80000009030000505697CB5C
+snmp-server engineID local 80000009030000505697CBB6
 snmp-server view *ilmi system included
 snmp-server view *ilmi atmForumUni included
 snmp-server view v1default iso included
@@ -1455,7 +1455,7 @@ snmp-server trap retry 3
 snmp-server trap timeout 30
 snmp-server packetsize 1500
 snmp-server queue-length 10
-snmp-server chassis-id 92F33PWQYAR
+snmp-server chassis-id 94TSWI79AYW
 snmp-server enable logging setop
 snmp-server enable traps wireless AP
 no snmp-server enable traps call-home
@@ -1689,8 +1689,8 @@ call-home
   subscribe-to-alert-group crash
   subscribe-to-alert-group inventory
   subscribe-to-alert-group syslog severity major pattern .*
-  subscribe-to-alert-group configuration periodic monthly 8 12:58
-  subscribe-to-alert-group inventory periodic monthly 8 12:43
+  subscribe-to-alert-group configuration periodic monthly 6 14:24
+  subscribe-to-alert-group inventory periodic monthly 6 14:09
  diagnostic-signature
   active
   profile "CiscoTAC-1"
